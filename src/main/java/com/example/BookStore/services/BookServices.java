@@ -8,13 +8,14 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.Base64;
+import java.util.List;
 
 @Service
 public class BookServices {
     @Autowired
     private BookRepository repository;
-
     public void saveBookToDB(MultipartFile file, String name, String description, int price, String authorBook) {
         Book book = new Book();
         String filename= StringUtils.cleanPath(file.getOriginalFilename());
@@ -24,15 +25,19 @@ public class BookServices {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         book.setName(name);
         book.setDescription(description);
         book.setPrice(price);
         book.setAuthor_book(authorBook);
         book.setAuthor_card("none");
+        book.setCount_sales(0);
+        book.setDate(LocalDate.now());
 
         repository.save(book);
+    }
 
-
-
+    public List<Book> findAll(){
+        return repository.findAll();
     }
 }

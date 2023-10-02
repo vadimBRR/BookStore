@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+
 @Entity
 @Table(name = "book")
 @Data
@@ -25,10 +27,17 @@ public class Book {
     private String image;
     @Column
     private String author_book;
-    @Column
+    @Column(name = "description", length = 1000)
     private String description;
     @Column
     private int price;
     @Column
     private String author_card;
+
+    @Column
+    private int count_sales;
+
+    @Column
+    private LocalDate date;
+
 }

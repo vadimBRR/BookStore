@@ -33,35 +33,50 @@
         background-color: inherit;
         border: 0px;
       }
+      .itd-btn:hover {
+        background-color: rgba(207, 207, 207, 0.728);
+      }
     </style>
     <title>BookStore</title>
   </head>
   <body>
-    <navbar>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <navbar >
+
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark py-3">
+        <div class="container-fluid  ">
+          <a class="navbar-brand" href="#">BookStore</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-              <a class="nav-link" href="#">Features</a>
-              <a class="nav-link" href="#">Pricing</a>
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </div>
+            <div class="navbar-nav mr-auto">
+                  <a class="nav-link" aria-current="page" href="/">Головна</a>
+                  <a class="nav-link " href="/books">Книжки</a>
+                  <a class="nav-link active" href="/add">Добавити книжку</a>
+                  
+                </div>
+              <div class="navbar-nav">
+                <a class="nav-link" href="/add">Авторизуватись</a>
+              </div>
           </div>
         </div>
       </nav>
     </navbar>
-    <section class="add-product">
+    <section class="add-product py-5 mt-4">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-8 ">
             <div class="back d-flex align-items-center ">
-              <i class="fas fa-arrow-left-long mr-2 btn btn-light"></i>
-              <h2 class="py-3">Створити оголошення</h2>
+              <a href="/books"><i class="fas fa-arrow-left-long mr-2 btn btn-light"></i></a>
+              <h2 class="py-3 ">Створити оголошення</h2>
             </div>
             <form action="/add" method="post" enctype="multipart/form-data">
               <div class="first-block add-block">
@@ -99,7 +114,7 @@
               </div>         
 
               <div class="first-block add-block mt-4 d-flex justify-content-end mb-4">
-                <button type="submit" class="btn btn-lg ">Скасувати</button>
+                <a href="/books" class="btn btn-lg me-3 itd-btn">Скасувати</a>
                 <button type="submit" class="btn btn-lg btn-success">Опублікувати</button>
               </div>              
             </form>
